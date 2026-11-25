@@ -1,5 +1,5 @@
 /**
- * Lumina Authentication — Client-Side Validation & Interactive UX
+ * RBSTeam Authentication — Client-Side Validation & Interactive UX
  * Handles Login, Sign Up, Password Visibility, Strength Scoring,
  * Remember Me persistence, Forgot Password flow, and Page Switching.
  */
@@ -632,7 +632,7 @@
       if (legalTitle) legalTitle.textContent = "Terms of Service";
       if (legalBody) {
         legalBody.innerHTML =
-          "<p>By creating a Lumina account, you agree to keep your credentials confidential and use the platform responsibly in accordance with applicable laws.</p>" +
+          "<p>By creating a RBSTeam account, you agree to keep your credentials confidential and use the platform responsibly in accordance with applicable laws.</p>" +
           "<p>You retain ownership of all content you create within your workspace.</p>";
       }
       openModal(legalModal);
@@ -642,7 +642,7 @@
       if (legalTitle) legalTitle.textContent = "Privacy Policy";
       if (legalBody) {
         legalBody.innerHTML =
-          "<p>Your privacy matters to us. Lumina collects only the information needed to authenticate and secure your account.</p>" +
+          "<p>Your privacy matters to us. RBSTeam collects only the information needed to authenticate and secure your account.</p>" +
           "<p>We never sell personal data to third parties, and you may request account deletion at any time.</p>";
       }
       openModal(legalModal);
