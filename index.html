@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign In — Lumina</title>
+  <meta name="description" content="Sign in to your Lumina account securely." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-page="login">
+  <!-- Ambient gradient backdrop -->
+  <div class="bg-backdrop" aria-hidden="true">
+    <div class="bg-orb bg-orb--one"></div>
+    <div class="bg-orb bg-orb--two"></div>
+    <div class="bg-orb bg-orb--three"></div>
+  </div>
+
+  <main class="auth-layout">
+    <section class="auth-card" aria-labelledby="login-heading">
+      <!-- Brand Header -->
+      <header class="auth-header">
+        <a href="index.html" class="brand" aria-label="Lumina Home">
+          <span class="brand-mark" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+              <path d="M12 2L20 7V17L12 22L4 17V7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
+              <circle cx="12" cy="12" r="3.2" fill="currentColor" />
+            </svg>
+          </span>
+          <span class="brand-name">Lumina</span>
+        </a>
+        <h1 id="login-heading" class="auth-title">Welcome back</h1>
+        <p class="auth-subtitle">Enter your credentials to access your workspace</p>
+      </header>
+
+      <!-- Global Status Alert (Error / Success / Info) -->
+      <div id="form-alert" class="alert" role="alert" aria-live="polite" hidden></div>
+
+      <!-- Login Form -->
+      <form id="login-form" class="auth-form" novalidate>
+        <!-- Email Address -->
+        <div class="form-group">
+          <label for="login-email" class="form-label">Email address</label>
+          <div class="input-wrapper">
+            <span class="input-icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="4" width="20" height="16" rx="3" />
+                <path d="M22 7L13.03 12.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+              </svg>
+            </span>
+            <input
+              type="email"
+              id="login-email"
+              name="email"
+              class="form-input"
+              placeholder="name@company.com"
+              autocomplete="email"
+              required
+              aria-describedby="login-email-error"
+            />
+          </div>
+          <p id="login-email-error" class="field-error" aria-live="polite"></p>
+        </div>
+
+        <!-- Password -->
+        <div class="form-group">
+          <div class="label-row">
+            <label for="login-password" class="form-label">Password</label>
+            <button type="button" id="forgot-password-btn" class="text-link text-link--sm">
+              Forgot password?
+            </button>
+          </div>
+          <div class="input-wrapper">
+            <span class="input-icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="11" width="18" height="11" rx="3" />
+                <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+              </svg>
+            </span>
+            <input
+              type="password"
+              id="login-password"
+              name="password"
+              class="form-input form-input--with-toggle"
+              placeholder="Enter your password"
+              autocomplete="current-password"
+              required
+              aria-describedby="login-password-error"
+            />
+            <button
+              type="button"
+              class="password-toggle"
+              data-toggle-password="login-password"
+              aria-label="Show password"
+              aria-pressed="false"
+            >
+              <svg class="icon-eye" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z" />
+                <circle cx="12" cy="12" r="3" />
+              </svg>
+              <svg class="icon-eye-off" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" hidden>
+                <path d="M9.88 9.88a3 3 0 1 0 4.24 4.24" />
+                <path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c6.5 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68" />
+                <path d="M6.61 6.61A13.526 13.526 0 0 0 2 12s3.5 7 10 7a9.74 9.74 0 0 0 5.39-1.61" />
+                <line x1="2" y1="2" x2="22" y2="22" />
+              </svg>
+            </button>
+          </div>
+          <p id="login-password-error" class="field-error" aria-live="polite"></p>
+        </div>
+
+        <!-- Remember Me -->
+        <div class="form-options">
+          <label class="checkbox-label" for="remember-me">
+            <input type="checkbox" id="remember-me" name="rememberMe" class="checkbox-input" />
+            <span class="checkbox-custom" aria-hidden="true">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+            </span>
+            <span>Remember me for 30 days</span>
+          </label>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" id="login-submit" class="btn btn-primary">
+          <span class="btn-text">Log In</span>
+          <span class="btn-spinner" aria-hidden="true" hidden></span>
+        </button>
+      </form>
+
+      <!-- Divider -->
+      <div class="divider" role="separator">
+        <span>or continue with</span>
+      </div>
+
+      <!-- Social Login Buttons -->
+      <div class="social-grid">
+        <button type="button" class="btn btn-social" data-social-provider="Google">
+          <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17Z" />
+            <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.11-6.72-4.96H1.29v3.14C3.26 21.3 7.31 24 12 24Z" />
+            <path fill="#FBBC05" d="M5.28 14.24c-.24-.72-.38-1.49-.38-2.24s.14-1.52.38-2.24V6.62H1.29C.47 8.24 0 10.06 0 12s.47 3.76 1.29 5.38l3.99-3.14Z" />
+            <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.31 0 3.26 2.7 1.29 6.62l3.99 3.14c.95-2.85 3.6-4.96 6.72-4.96Z" />
+          </svg>
+          <span>Google</span>
+        </button>
+
+        <button type="button" class="btn btn-social" data-social-provider="Facebook">
+          <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill="#1877F2" d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073Z" />
+          </svg>
+          <span>Facebook</span>
+        </button>
+      </div>
+
+      <!-- Footer Switch Link -->
+      <footer class="auth-footer">
+        <p>
+          Don&apos;t have an account?
+          <a href="signup.html" class="text-link page-switch">Create an account</a>
+        </p>
+      </footer>
+    </section>
+  </main>
+
+  <!-- Forgot Password Modal -->
+  <div id="forgot-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="forgot-modal-title" hidden>
+    <div class="modal-card">
+      <div class="modal-header">
+        <div>
+          <h2 id="forgot-modal-title" class="modal-title">Reset your password</h2>
+          <p class="modal-subtitle">Enter your account email and we&apos;ll send a reset link.</p>
+        </div>
+        <button type="button" class="modal-close" data-close-modal="forgot-modal" aria-label="Close modal">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
+        </button>
+      </div>
+
+      <div id="forgot-alert" class="alert" role="alert" aria-live="polite" hidden></div>
+
+      <form id="forgot-form" class="auth-form" novalidate>
+        <div class="form-group">
+          <label for="forgot-email" class="form-label">Email address</label>
+          <div class="input-wrapper">
+            <span class="input-icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="4" width="20" height="16" rx="3" />
+                <path d="M22 7L13.03 12.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+              </svg>
+            </span>
+            <input
+              type="email"
+              id="forgot-email"
+              name="resetEmail"
+              class="form-input"
+              placeholder="name@company.com"
+              autocomplete="email"
+              required
+              aria-describedby="forgot-email-error"
+            />
+          </div>
+          <p id="forgot-email-error" class="field-error" aria-live="polite"></p>
+        </div>
+
+        <div class="modal-actions">
+          <button type="button" class="btn btn-secondary" data-close-modal="forgot-modal">Cancel</button>
+          <button type="submit" class="btn btn-primary">Send Reset Link</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

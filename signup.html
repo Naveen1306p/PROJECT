@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Create Account — Lumina</title>
+  <meta name="description" content="Create your new Lumina account in seconds." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-page="signup">
+  <!-- Ambient gradient backdrop -->
+  <div class="bg-backdrop" aria-hidden="true">
+    <div class="bg-orb bg-orb--one"></div>
+    <div class="bg-orb bg-orb--two"></div>
+    <div class="bg-orb bg-orb--three"></div>
+  </div>
+
+  <main class="auth-layout">
+    <section class="auth-card auth-card--wide" aria-labelledby="signup-heading">
+      <!-- Brand Header -->
+      <header class="auth-header">
+        <a href="index.html" class="brand" aria-label="Lumina Home">
+          <span class="brand-mark" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+              <path d="M12 2L20 7V17L12 22L4 17V7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
+              <circle cx="12" cy="12" r="3.2" fill="currentColor" />
+            </svg>
+          </span>
+          <span class="brand-name">Lumina</span>
+        </a>
+        <h1 id="signup-heading" class="auth-title">Create your account</h1>
+        <p class="auth-subtitle">Start your journey with a secure, unified workspace</p>
+      </header>
+
+      <!-- Global Status Alert -->
+      <div id="form-alert" class="alert" role="alert" aria-live="polite" hidden></div>
+
+      <!-- Sign Up Form -->
+      <form id="signup-form" class="auth-form" novalidate>
+        <!-- Full Name -->
+        <div class="form-group">
+          <label for="signup-name" class="form-label">Full name</label>
+          <div class="input-wrapper">
+            <span class="input-icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                <circle cx="12" cy="7" r="4" />
+              </svg>
+            </span>
+            <input
+              type="text"
+              id="signup-name"
+              name="fullName"
+              class="form-input"
+              placeholder="Alex Morgan"
+              autocomplete="name"
+              required
+              aria-describedby="signup-name-error"
+            />
+          </div>
+          <p id="signup-name-error" class="field-error" aria-live="polite"></p>
+        </div>
+
+        <!-- Email & Phone Grid -->
+        <div class="form-row">
+          <!-- Email Address -->
+          <div class="form-group">
+            <label for="signup-email" class="form-label">Email address</label>
+            <div class="input-wrapper">
+              <span class="input-icon" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="4" width="20" height="16" rx="3" />
+                  <path d="M22 7L13.03 12.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                </svg>
+              </span>
+              <input
+                type="email"
+                id="signup-email"
+                name="email"
+                class="form-input"
+                placeholder="name@company.com"
+                autocomplete="email"
+                required
+                aria-describedby="signup-email-error"
+              />
+            </div>
+            <p id="signup-email-error" class="field-error" aria-live="polite"></p>
+          </div>
+
+          <!-- Phone Number -->
+          <div class="form-group">
+            <label for="signup-phone" class="form-label">Phone number</label>
+            <div class="input-wrapper">
+              <span class="input-icon" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                </svg>
+              </span>
+              <input
+                type="tel"
+                id="signup-phone"
+                name="phone"
+                class="form-input"
+                placeholder="+1 (555) 234-5678"
+                autocomplete="tel"
+                required
+                aria-describedby="signup-phone-error"
+              />
+            </div>
+            <p id="signup-phone-error" class="field-error" aria-live="polite"></p>
+          </div>
+        </div>
+
+        <!-- Password -->
+        <div class="form-group">
+          <label for="signup-password" class="form-label">Password</label>
+          <div class="input-wrapper">
+            <span class="input-icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="11" width="18" height="11" rx="3" />
+                <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+              </svg>
+            </span>
+            <input
+              type="password"
+              id="signup-password"
+              name="password"
+              class="form-input form-input--with-toggle"
+              placeholder="Create a strong password"
+              autocomplete="new-password"
+              required
+              aria-describedby="password-strength-text signup-password-error"
+            />
+            <button
+              type="button"
+              class="password-toggle"
+              data-toggle-password="signup-password"
+              aria-label="Show password"
+              aria-pressed="false"
+            >
+              <svg class="icon-eye" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z" />
+                <circle cx="12" cy="12" r="3" />
+              </svg>
+              <svg class="icon-eye-off" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" hidden>
+                <path d="M9.88 9.88a3 3 0 1 0 4.24 4.24" />
+                <path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c6.5 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68" />
+                <path d="M6.61 6.61A13.526 13.526 0 0 0 2 12s3.5 7 10 7a9.74 9.74 0 0 0 5.39-1.61" />
+                <line x1="2" y1="2" x2="22" y2="22" />
+              </svg>
+            </button>
+          </div>
+
+          <!-- Password Strength Meter -->
+          <div class="strength-meter" id="password-strength" data-strength="0">
+            <div class="strength-bars" aria-hidden="true">
+              <span class="strength-bar"></span>
+              <span class="strength-bar"></span>
+              <span class="strength-bar"></span>
+              <span class="strength-bar"></span>
+            </div>
+            <div class="strength-meta">
+              <span id="password-strength-text" class="strength-label">Use 8+ chars with upper, lower, number &amp; symbol</span>
+            </div>
+          </div>
+          <p id="signup-password-error" class="field-error" aria-live="polite"></p>
+        </div>
+
+        <!-- Confirm Password -->
+        <div class="form-group">
+          <label for="signup-confirm-password" class="form-label">Confirm password</label>
+          <div class="input-wrapper">
+            <span class="input-icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                <path d="m9 12 2 2 4-4" />
+              </svg>
+            </span>
+            <input
+              type="password"
+              id="signup-confirm-password"
+              name="confirmPassword"
+              class="form-input form-input--with-toggle"
+              placeholder="Re-enter your password"
+              autocomplete="new-password"
+              required
+              aria-describedby="signup-confirm-error"
+            />
+            <button
+              type="button"
+              class="password-toggle"
+              data-toggle-password="signup-confirm-password"
+              aria-label="Show confirm password"
+              aria-pressed="false"
+            >
+              <svg class="icon-eye" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z" />
+                <circle cx="12" cy="12" r="3" />
+              </svg>
+              <svg class="icon-eye-off" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" hidden>
+                <path d="M9.88 9.88a3 3 0 1 0 4.24 4.24" />
+                <path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c6.5 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68" />
+                <path d="M6.61 6.61A13.526 13.526 0 0 0 2 12s3.5 7 10 7a9.74 9.74 0 0 0 5.39-1.61" />
+                <line x1="2" y1="2" x2="22" y2="22" />
+              </svg>
+            </button>
+          </div>
+          <p id="signup-confirm-error" class="field-error" aria-live="polite"></p>
+        </div>
+
+        <!-- Terms and Conditions -->
+        <div class="form-group">
+          <label class="checkbox-label" for="signup-terms">
+            <input
+              type="checkbox"
+              id="signup-terms"
+              name="terms"
+              class="checkbox-input"
+              required
+              aria-describedby="signup-terms-error"
+            />
+            <span class="checkbox-custom" aria-hidden="true">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+            </span>
+            <span>
+              I agree to the
+              <button type="button" class="text-link inline-link" id="terms-btn">Terms of Service</button>
+              and
+              <button type="button" class="text-link inline-link" id="privacy-btn">Privacy Policy</button>
+            </span>
+          </label>
+          <p id="signup-terms-error" class="field-error" aria-live="polite"></p>
+        </div>
+
+        <!-- Create Account Button -->
+        <button type="submit" id="signup-submit" class="btn btn-primary">
+          <span class="btn-text">Create Account</span>
+          <span class="btn-spinner" aria-hidden="true" hidden></span>
+        </button>
+      </form>
+
+      <!-- Footer Switch Link -->
+      <footer class="auth-footer">
+        <p>
+          Already have an account?
+          <a href="index.html" class="text-link page-switch">Log in</a>
+        </p>
+      </footer>
+    </section>
+  </main>
+
+  <!-- Terms / Privacy Legal Modal -->
+  <div id="legal-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="legal-modal-title" hidden>
+    <div class="modal-card">
+      <div class="modal-header">
+        <div>
+          <h2 id="legal-modal-title" class="modal-title">Terms of Service</h2>
+          <p class="modal-subtitle">Last updated: November 2026</p>
+        </div>
+        <button type="button" class="modal-close" data-close-modal="legal-modal" aria-label="Close modal">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
+        </button>
+      </div>
+
+      <div id="legal-modal-body" class="modal-body">
+        <p>By creating a Lumina account, you agree to keep your credentials confidential and use the platform responsibly in accordance with applicable laws.</p>
+        <p>We encrypt sensitive account details in transit and never sell your personal information to third parties.</p>
+      </div>
+
+      <div class="modal-actions">
+        <button type="button" class="btn btn-primary" data-close-modal="legal-modal">Got it</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
